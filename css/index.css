@@ -1,0 +1,45 @@
+.box{
+    width: 100%;
+    height: 250px;
+}
+.box>div{
+    width: 180px;
+    height: 180px;
+    /* animation: wang 2s linear;  */
+    animation-name: wang;
+    animation-duration: 1s;
+    position: absolute;
+    top: 100px;
+    border: black solid 1px;
+    border-radius: 50%;
+}
+.one{
+    background-color: chartreuse;
+    /* left: 10px; */
+    left: 50px;
+    animation-iteration-count: 5;
+}
+.two{
+    background-color: crimson;
+    /* left: calc(10px + 50px +180px); */
+    left: 300px;
+    animation-iteration-count: 30;
+}
+.three{
+    background-color: blue;
+    /* left: calc(10px + (50px+180px) * 2); */
+    left: 600px;
+    animation-iteration-count: infinite;
+    /* animation-iteration-count: infinite; */
+}
+@keyframes wang{
+        0%{top: 118px; transform: scale(1.2,0.9);}
+        80%{top: 50px; transform: scale(1);}
+        100%{top: 118px; transform: scale(01.2,0.9);}
+}
+.play:focus ~ div {
+    animation-play-state: running;
+}
+.stop:focus ~ div {
+    animation-play-state: paused;
+}
